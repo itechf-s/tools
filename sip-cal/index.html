@@ -14,7 +14,229 @@
   </head>
   <body>
     <h1>SIP Calculator</h1>
-
+    <div class="container content-wrapper">
+      <!-- content starts here -->
+      <div class="content">
+        <!-- title -->
+        <div class="title page-header-custom">
+          <h1>SIP Calculator</h1>
+          https://sipcalculator.in/result
+          <!-- <p class="">Calculate returns on your SIP investments.</p> -->
+        </div>
+    
+        <!-- main content starts here -->
+        <div class="main">
+          <div class="ads ads-top">
+            
+          </div>
+          <div class="details">
+            <div class="row">
+              <div class="col-md-8">
+                <form class="form" action="/result" method="post">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="amountInputField">Monthly Investment Amount (Rs.)</label>
+                        <input type="text" class="form-control" id="amountInputField" placeholder="20000" data-name="amount" required="">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <div class="col-xs-7">
+                          <label for="periodInputField">Investment Period</label>
+                          <div class="input-group">
+                            <!-- <label for="periodInputField">Investment Period</label> -->
+                            <input type="text" class="form-control" id="periodInputField" placeholder="10" data-name="period" required="">
+                            <span class="input-group-addon" id="period-addon">years</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="returnRateInputField">Expected Annual Returns (%)</label>
+                            <input type="text" class="form-control" id="returnRateInputField" placeholder="15" data-name="return_rate" required="">
+                          </div>
+                        </div>
+                        <div class="col-xs-4">
+                          <div class="form-group">
+                            <label for="inflationInputField">Adjust for Inflation ?</label>
+                            <select class="form-control" id="inflationSelectField" data-name="inflation">
+                              <option value="no" selected="selected">No</option>
+                              <option value="yes">Yes</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="startButton" id="emptyLabel"></label>
+                        <button type="submit" class="btn btn-primary btn-block" id="calculateButton">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-4">
+    
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-6">
+                <div id="summary-box">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">Summary</h4>
+                    </div>
+                    <div class="panel-body">
+                      <table class="table table-striped">
+                        <tbody>
+                          <tr>
+                            <td>Expected Amount</td>
+                            <td><span class="text-muted">Rs.</span> <span id="futureValue">1210209 <span class="text-muted">(12.1 Lakhs)</span></span></td>
+                          </tr>
+                          <tr>
+                            <td>Amount Invested</td>
+                            <td><span class="text-muted">Rs.</span> <span id="amountInvested">521160 <span class="text-muted">(5.2 Lakhs)</span></span></td>
+                          </tr>
+                          <tr>
+                            <td>Wealth Gain</td>
+                            <td><span class="text-muted">Rs.</span> <span id="wealthGain" class="text-green">689049 <span class="text-muted">(6.9 Lakhs)</span></span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="alert alert-warning hide-by-default" id="showInflationRate">
+                        <span class="">Assumed annual inflation rate is 6%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="chart-wrapper">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">Amount Invested vs Returns</h4>
+                    </div>
+                    <div class="panel-body">
+                      <canvas id="pieChart" width="300" height="300" style="width: 300px; height: 300px;"></canvas>
+                    </div>
+                    <div class="panel-footer">
+                      <h4 class="panel-title">
+                        Expected Maturity Amount : Rs.<strong> <span id="maturity-amount">1210209</span></strong>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-6" style="margin-top: 10px; margin-bottom: 10px;">
+              <p class="muted text-center"><small>ADVERTISEMENT</small></p>
+              <div class="ads ads-top">
+                <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- sip_responsive_unit_1 -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8281929521723681" data-ad-slot="3357944488" data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+              </div>
+            </div>    
+              <div class="col-md-6" id="results-wrapper">
+                <div class="alert alert-info">
+                  <span class="">Projected SIP returns for various time durations.</span>
+                  <span class="text-muted" id="aReturnRate">[ @15% ]</span>
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Duration</th>
+                      <th>SIP Amount (₹)</th>
+                      <th title="Expected Amount">Future Value (₹)</th>
+                    </tr>
+                  </thead>
+                  <tbody><tr class="warning"><td>10 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 12.1 Lakhs</td></tr><tr><td>5 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 3.9 Lakhs</td></tr><tr><td>8 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 8.1 Lakhs</td></tr><tr><td>10 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 12.1 Lakhs</td></tr><tr><td>12 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 17.5 Lakhs</td></tr><tr><td>15 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 29.4 Lakhs</td></tr><tr><td>18 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 48 Lakhs</td></tr><tr><td>20 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 65.8 Lakhs</td></tr><tr><td>22 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 89.9 Lakhs</td></tr><tr><td>25 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 1.4 Crores</td></tr><tr><td>28 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 2.3 Crores</td></tr><tr><td>30 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 3 Crores</td></tr><tr><td>35 years</td><td><i class="icon-inr"></i> 4343</td><td><i class="icon-inr"></i> 6.5 Crores</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-sm-7">
+                <br>
+                <p>
+                <strong>Systematic Investment Plan (SIP)</strong> is a kind of investment scheme offered by mutual fund
+                companies. Using SIP one can invest small amount peridically (weekly, monthly, quaterly) into a selected
+                mutual fund. For retail investors, SIP offers a well disciplined and passive approach to investing,
+                to create wealth in long term (using the power of compounding). Since, the amount is invested on regular
+                intervals (usually on <em>monthly</em> basis), it also reduces the impact of market volatility.
+                </p>
+    
+                <p>
+                  This calculator helps you calculate the wealth gain and expected returns for your monthly SIP investment.
+                </p>
+                <br>
+                <h4>Benefits of SIP as compare to Lump sumps investment</h4>
+                <ul>
+                  <li>You don't need to speculate or focus on timing the market (which isn't the right way for
+                    generating returns over long term) </li>
+                  <li>Amount is invested on monthly basis, so there is little to no impact of market volatility
+                    (unit cost averaging)</li>
+                  <li>Passive and automated (monthly installments can be deducted automatically) approach makes you more
+                    committed to guranteed saving/investment</li>
+                  <li>It's very flexible - you can create/update/cancel SIP anytime. Most of the funds starts
+                    as low as Rs. 1000 per month</li>
+                </ul>
+    
+    
+              </div>
+              <div class="col-sm-5">
+                <div class="social-share-buttons">
+      <span class="text-muted">Share on ➔</span>
+      <a href="https://twitter.com/share?url=http://sipcalculator.in&amp;text=SIP Calculator" target="_blank" class="btn btn-info btn-xs">Twitter</a>
+      <a href="http://www.facebook.com/sharer.php?u=http://sipcalculator.in" target="_blank" class="btn btn-primary btn-xs">Facebook</a>
+      <a href="https://plus.google.com/share?url=http://sipcalculator.in" target="_blank" class="btn btn-danger btn-xs">Google Plus</a>
+    </div>
+    
+                <h2>Recommended Mutual Funds</h2>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Mutual Fund</th>
+                      <th title="Annual Returns (Last 5 years)">Expected Returns</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>UTI Nifty Index Fund</td>
+                      <td>**</td>
+                    </tr>
+                    <tr>
+                      <td>UTI Nifty N50 Index Fund</td>
+                      <td>**</td>
+                    </tr>
+                    <tr>
+                      <td>Motilal Oswal S&amp;P 500 Index</td>
+                      <td>**</td>
+                    </tr>
+                    <tr>
+                      <td>Parag Parikh Liquid Fund</td>
+                      <td>*</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="/top-10-mutual-funds" class="btn btn-success">Top 10 Mutual Fund</a>
+              </div>
+            </div>
+            <br>
+            <p><strong>Note : </strong> Please suggest new features or report any error,
+              to help us improve this website.</p>
+    
+          </div>
+        </div> <!-- end of main -->
+      </div>
+      <!-- end of content -->
+    </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
   </body>
