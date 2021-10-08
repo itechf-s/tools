@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIP Calculator with modern ui design</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./styles/revealator.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card-main">
+        <div
+          class="card calc-card revealator-slideup revealator-once revealator-delay1"
+        >
+          <div class="form-holder">
+            <h3>Investment Type Monthly SIP</h3>
+            <div class="lb-txt1">
+              <label for="Monthly Investment">Monthly Investment (₹) :</label>
+
+              <input
+                type="number"
+                value=""
+                min="500"
+                max="200000"
+                class="test"
+                id="amtinvested"
+                placeholder="1000"
+                required
+              />
+            </div>
+            <div class="lb-txt2">
+              <label for="Monthly Investment"
+                >INVESTMENT PERIOD(In Years) :</label
+              >
+              <input
+                type="number"
+                value=""
+                min="1"
+                max="30"
+                class="test1"
+                id="nofoyears"
+                placeholder="7"
+                required
+              />
+            </div>
+            <div class="lb-txt3">
+              <label for="Monthly Investment">RETURN(%) :</label>
+              <input
+                type="number"
+                value=""
+                min="1"
+                max="15"
+                class="test2"
+                id="rateofreturn"
+                placeholder="12"
+                required
+              />
+            </div>
+            <input
+              name="calculate"
+              alt="calculate"
+              onclick="return calculate();"
+              type="button"
+              value="Calculate"
+              class="btn"
+            />
+          </div>
+          <div class="display-box">
+            <div class="total">
+              <h5>TOTAL INVESTMENT</h5>
+              <div class="display-text" id="totalAmt"></div>
+            </div>
+            <div class="gained">
+              <h5>WEALTH GAINED</h5>
+              <div class="display-text" id="wealth"></div>
+            </div>
+            <div class="expected">
+              <h5>MATURITY VALUE</h5>
+              <div class="display-text" id="maturity"></div>
+            </div>
+          </div>
+        </div>
+        <div class="content-card">
+          <div
+            class="card revealator-slideup revealator-once revealator-delay2 txt-head"
+          >
+            <h2>
+              Grow wealthy with the best SIP investments.<br />
+              Use our
+              <span>SIP calculator</span>
+            </h2>
+            <p>
+              What is an SIP? A Systematic Investment Plan is a monthly
+              investment in Mutual Funds which helps build your wealth and go
+              after your life goals.
+            </p>
+          </div>
+          <div
+            class="card chart-card revealator-slideup revealator-once revealator-delay3 card-center"
+          >
+            <div class="chart-container">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card notice">
+      <p>*Monthly Investment value must be between ₹ 500 to ₹ 2,00,000</p>
+      <p>*Investment preiod should be between 1 to 30 years</p>
+      <p>*Rate Of Return must be between 1% to 15%</p>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script/app.js"></script>
+    <script src="./script/revealator.js"></script>
+  </body>
+</html>
