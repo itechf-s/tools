@@ -1,7 +1,7 @@
 :root {
-  --primaryColor: #01a9b4;
+  --primaryColor: #ffab2f;
   --secondaryColor: #ffab2f;
-  --mainText: #363636;
+  --mainText: #141414;
   --secText: #44475b;
 }
 * {
@@ -22,7 +22,7 @@ strong {
   font-family: "Roboto", sans-serif;
 }
 h1 {
-  font-size: 38px;
+  font-size: 18px;
 }
 h2 {
   font-size: 32px;
@@ -86,9 +86,9 @@ body::-webkit-scrollbar {
 .card {
   height: auto;
   background-color: #fff;
-  border: none;
+  border: 1px solid;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 10px;
   -webkit-box-shadow: 5px 51px 70px -25px rgba(152, 155, 171, 1);
   -moz-box-shadow: 5px 51px 70px -25px rgba(152, 155, 171, 1);
   box-shadow: 5px 51px 70px -25px rgba(152, 155, 171, 1);
@@ -128,8 +128,8 @@ label {
 }
 input {
   height: 40px;
-  border: none;
-  border-bottom: 2px solid var(--secondaryColor);
+  border: 1px solid;
+  border-bottom: 2px solid var(#dcd6ce);
   width: 100%;
   display: inline-block;
   margin-bottom: 25px;
@@ -277,3 +277,11 @@ input::placeholder {
     color: #fff;
   }
 }
+.switch-container{
+  display:flex;
+  padding-right: 10px;
+  font-family: monospace;
+  justify-content:center;
+}
+.switch-container> div {
+  margin:1% 10% 3% 0;
