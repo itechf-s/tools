@@ -5,12 +5,12 @@
     font-family: monospace;
 }
 .page-container{
-    margin: 1% 20%;
+    margin: 1% 10%;
     font-size: 16px;
 }
 .switch-container{
     display: flex;
-    padding-left: 50px;
+    padding-left: 10px;
     font-family: monospace;
     justify-content: center;
 }
